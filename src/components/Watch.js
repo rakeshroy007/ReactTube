@@ -77,7 +77,7 @@ const Watch = () => {
 
 
     return (
-        <div className='flex ml-[3%] w-[90%] '>
+        <div className='flex ml-[3%] w-[90%] mb-[7%] '>
             <div className='flex w-full'>
                 <div>
                     {/* This 'iframe' is from official youtube -> share -> Embed */}

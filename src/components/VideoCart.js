@@ -4,6 +4,8 @@ import Avatar from 'react-avatar';
 import { API_KEY } from '../constant/youtube';
 import { formatNumber } from '../utils/formatNumber';
 import { timeAgo } from '../utils/timeAgo';
+require('../constant/images/03.jpg')
+
 
 
 const VideoCart = ({ item, isLoading }) => {
@@ -12,7 +14,13 @@ const VideoCart = ({ item, isLoading }) => {
   const getYoutubeChannelName = async () => {
     try {
       const res = await axios.get(`https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${item.snippet.channelId}&key=${API_KEY}`)
-      setYtIcon(res.data.items[0].snippet.thumbnails.high.url)
+      setYtIcon(
+        res.data.items[0].snippet.thumbnails.high?.url || 
+        // res.data.items[0].snippet.thumbnails.medium?.url || 
+        // res.data.items[0].snippet.thumbnails.default?.url || 
+        require('../constant/images/03.jpg')
+
+      );
     } catch (error) {
       console.log("Error 2 is : ", error)
     }
@@ -43,7 +51,7 @@ const VideoCart = ({ item, isLoading }) => {
     <div className="w-94 cursor-pointer mb-2 bg-gray-100 border-1 rounded-2xl transition-transform duration-300 hover:shadow-2xl hover:scale-95">
       <img
         className="w-full rounded-lg shadow-lg object-cover"
-        src={item?.snippet?.thumbnails?.medium?.url}
+        src={item?.snippet?.thumbnails?.standard?.url || item?.snippet?.thumbnails?.medium?.url}
         alt="YouTube Video Thumbnail"
       />
       <div>

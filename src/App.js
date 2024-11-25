@@ -32,9 +32,11 @@ const appRouter = createBrowserRouter([
 
 function App() {
   return (
-    <div>
+    <div className='w-full'>
       <Navbar />
-      <RouterProvider router={appRouter} />
+      <div className='fixed'>
+        <RouterProvider router={appRouter} />
+      </div>
     </div>
   );
 }

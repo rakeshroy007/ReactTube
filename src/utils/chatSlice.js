@@ -8,7 +8,7 @@ const chatSlice = createSlice({
     reducers:{
         setMessage:(state, action) => {
             // Remove the first message if array length exceeds 8
-            if (state.message.length >= 10) {
+            if (state.message.length >= 15) {
                 state.message.shift();
             }
             state.message.push(action.payload)
