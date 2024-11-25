@@ -49,7 +49,7 @@ const VideoContainer = () => {
   },[category])
 
   return (
-    <div className={`mt-5 grid grid-cols-3 gap-3 mb-20 ${ open ? 'w-[80%]' : 'w-[84%]' }`} >
+    <div className={`mt-4 grid grid-cols-3 gap-3 mb-20 mx-3 ${ open ? 'w-[80%]' : 'w-[85%]' }`} >
       {video.length === 0 ? (      // Check if video data is still loading
       Array.from({ length: 6 }).map((_, index) => (     // Render 6 skeleton cards
         <div key={index}>
