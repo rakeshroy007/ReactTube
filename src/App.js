@@ -34,7 +34,7 @@ function App() {
   return (
     <div className='w-full'>
       <Navbar />
-      <div className='fixed'>
+      <div className='fixed w-full'>
         <RouterProvider router={appRouter} />
       </div>
     </div>

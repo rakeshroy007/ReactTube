@@ -69,7 +69,7 @@ const Watch = () => {
 
     const sendMessage = () => {
         dispatch(setMessage({
-            name: "Patel Programmer",
+            name: "Me",
             message: input
         }))
         setInput("")
@@ -106,32 +106,35 @@ const Watch = () => {
                                     </div>
                                 </div>
                             </div>
-                            <button className='px-5 py-2 font-medium bg-black text-white rounded-full ml-3'>Subscribe</button>
+                            <button className='px-5 py-2 font-medium bg-black text-white rounded-full ml-3 
+                                        transition-all duration-100 hover:bg-white hover:text-black hover:border-2 hover:border-black hover:shadow-lg'>
+                                Subscribe
+                            </button>
                         </div>
                         <div className='flex'>
                             <div className='flex items-center cursor-pointer bg-gray-200 px-4 py-2 rounded-full mr-2'>
                                 {singleVideo?.statistics?.likeCount ? (
                                     <>
-                                        <BiLike size={"21px"} className="mr-4" />
+                                        <BiLike size={"21px"} className="mr-4 transition-all duration-300 hover:scale-110 " />
                                         <span>{formatLikes(singleVideo.statistics.likeCount)}</span>
                                     </>
                                 ) : (
                                     <>
-                                        <BiLike size={"21px"} className="mr-4" />
+                                        <BiLike size={"21px"} className="mr-4 transition-all duration-300 hover:scale-110" />
                                         <span className="font-medium">Hidden</span>
                                     </>
                                 )}
                                 {/* Divider between Like and Dislike */}
                                 <span className="px-2 text-gray-500">|</span>
 
-                                < BiDislike size={"21px"} />
+                                < BiDislike size={"21px"} className='transition-all duration-300 hover:scale-110' />
                             </div>
                             <div className='flex items-center cursor-pointer bg-gray-200 px-4 py-2 rounded-full mr-2 '>
-                                < PiShareFatLight size={"21px"} className='mr-2 ' />
+                                < PiShareFatLight size={"21px"} className='mr-2 transition-all duration-300 hover:scale-110' />
                                 <span className='text-base'>Share</span>
                             </div>
                             <div className='flex items-center cursor-pointer bg-gray-200 px-4 py-2 rounded-full  '>
-                                < BsDownload size={"21px"} className='mr-2' />
+                                < BsDownload size={"21px"} className='mr-2 transition-all duration-300 hover:scale-110' />
                                 <span>Download</span>
                             </div>
                         </div>
@@ -151,7 +154,7 @@ const Watch = () => {
                         <h1 className="text-lg font-semibold text-gray-800 tracking-wide">Top Chat</h1>
                         <BsThreeDotsVertical className="text-gray-600 hover:text-gray-800 cursor-pointer" />
                     </div>
-                    <div className='overflow-y-auto h-[28rem] flex flex-col-reverse'>        
+                    <div className='overflow-y-auto h-[28rem] flex flex-col-reverse'>
                         <LiveChat />
                     </div>
                     <div className='flex items-center justify-between border-t p-2'>
@@ -160,8 +163,10 @@ const Watch = () => {
                                 <Avatar src='https://st2.depositphotos.com/2703645/7303/v/450/depositphotos_73039841-stock-illustration-male-avatar-icon.jpg' size={35} round={true} className='cursor-pointer' />
                             </div>
                             <input value={input} onChange={(e) => setInput(e.target.value)} className='border-b border-gray-300 outline-none ml-2' type="text" placeholder='Send message...' />
-                            <div className='bg-gray-200 cursor-pointer p-2 rounded-xl ml-5'>
-                                < BsSend onClick={sendMessage} className='cursor-pointer' />
+                            <div className='bg-gray-200 cursor-pointer p-2 rounded-xl ml-5 
+                                            transition-all duration-300 
+                                            hover:scale-105 hover:shadow-lg hover:bg-gray-300'>
+                                < BsSend onClick={sendMessage} className='cursor-pointer ' />
                             </div>
                         </div>
                     </div>

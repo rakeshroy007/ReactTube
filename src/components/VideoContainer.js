@@ -9,7 +9,7 @@ import { setHomeVideo, setIsLoading, resetVideos } from '../utils/appSlice'
 
 const VideoContainer = () => {
   const dispatch = useDispatch()   
-  const {video, category, open} = useSelector((store) => store.app)      
+  const { video, category } = useSelector((store) => store.app)      
 
   const fetchingYoutubeVideo = async() => {
     try {
@@ -49,7 +49,7 @@ const VideoContainer = () => {
   },[category])
 
   return (
-    <div className={`mt-4 grid grid-cols-3 gap-3 mb-20 mx-3 ${ open ? 'w-[80%]' : 'w-[85%]' }`} >
+    <div className={`mt-4 grid grid-cols-3 gap-3 mb-20 mx-3 w-[98%]`} >
       {video.length === 0 ? (      // Check if video data is still loading
       Array.from({ length: 6 }).map((_, index) => (     // Render 6 skeleton cards
         <div key={index}>

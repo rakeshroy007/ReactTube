@@ -12,8 +12,6 @@ const getRandomLocalImage = () => {
 
 const ChatMessage = ({ item }) => {
 
-  
-
   return (
 
     <div className="flex items-start mb-3 bg-gray-200 rounded-lg">

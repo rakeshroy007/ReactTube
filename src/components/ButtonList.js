@@ -6,7 +6,7 @@ const buttonList = ["All", "Javascript", "Python", "Live", "Mixes", "Game", "Mov
 
 const ButtonList = () => {
   const dispatch = useDispatch();
-  const { active, open } = useSelector((store) => store.app)
+  const { active } = useSelector((store) => store.app)
   const scrollContainerRef = useRef(null); // Ref for the scroll container
 
   const videoByTag = (tag) => {
@@ -38,7 +38,7 @@ const ButtonList = () => {
       {/* Scrollable Button List */}  {/* This 'no-scrollbar' is defined in 'index.css' */}
       <div
         ref={scrollContainerRef}
-        className={`flex  ${ open ? 'w-[74%]' : 'w-[80%]' } items-center overflow-x-scroll no-scrollbar bg-white shadow-lg shadow-gray-400/50 rounded-2xl p-1`}
+        className={`flex w-[100%] ' } items-center overflow-x-scroll no-scrollbar bg-white shadow-lg shadow-gray-400/50 rounded-2xl p-1`}
       >   
         {buttonList.map((item, index) => (
           <div key={index}>
