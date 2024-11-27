@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
-import { API_KEY, YOUTUBE_VIDEO_API } from '../constant/youtube'  
+import { API_KEY, YOUTUBE_VIDEO_API, FETCH_BY_CATEGORY_API } from '../constant/youtube'  
 import VideoCart from './VideoCart'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { setHomeVideo, setIsLoading, resetVideos } from '../utils/appSlice'
+
 
 
 const VideoContainer = () => {
@@ -23,7 +24,7 @@ const VideoContainer = () => {
 
   const fetchVideoByCategory = async () => {
     try {
-        const res = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${category}&type=video&key=${API_KEY}`)
+        const res = await axios.get(FETCH_BY_CATEGORY_API + `&q=${category}&type=video&key=${API_KEY}`)
         dispatch(setHomeVideo(res?.data?.items))
     } catch (error) {
         console.log("Error 6 is :", error)

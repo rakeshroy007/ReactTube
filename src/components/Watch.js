@@ -52,7 +52,7 @@ const Watch = () => {
                 const subs = channelResponse.data.items[0].statistics.subscriberCount;
                 setSubscriberCount(formatNumber(subs)); // Format subscriber count
             } catch (error) {
-                console.error('Error fetching video/channel details:', error);
+                console.log('Error fetching video/channel details:', error);
             }
         };
 
@@ -77,7 +77,7 @@ const Watch = () => {
 
 
     return (
-        <div className='flex ml-[3%] w-[90%] mb-[7%] '>
+        <div className='flex ml-[3%] w-[90%] mb-[7%] mt-[2%] '>
             <div className='flex w-full'>
                 <div>
                     {/* This 'iframe' is from official youtube -> share -> Embed */}
